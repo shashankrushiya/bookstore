@@ -24,27 +24,27 @@ async def client():
 
 @pytest.mark.asyncio
 async def test_signup(client, test_db):
-    response = await client.post("/signup", json={"email": "test@example.com", "password": "password"})
+    response = await client.post("/signup", json={"email": "shashank@example.com", "password": "password"})
     assert response.status_code == 200
     assert response.json()["message"] == "User created successfully"
 
 
 @pytest.mark.asyncio
 async def test_login(client, test_db):
-    await client.post("/signup", json={"email": "test@example.com", "password": "password"})
-    response = await client.post("/login", json={"email": "test@example.com", "password": "password"})
+    await client.post("/signup", json={"email": "shashank@example.com", "password": "password"})
+    response = await client.post("/login", json={"email": "shashank@example.com", "password": "password"})
     assert response.status_code == 200
     assert "access_token" in response.json()
 
 
 @pytest.mark.asyncio
 async def test_create_book(client, test_db):
-    await client.post("/signup", json={"email": "test@example.com", "password": "password"})
-    login_response = await client.post("/login", json={"email": "test@example.com", "password": "password"})
+    await client.post("/signup", json={"email": "shashank@example.com", "password": "password"})
+    login_response = await client.post("/login", json={"email": "shashank@example.com", "password": "password"})
     access_token = login_response.json()["access_token"]
 
     headers = {"Authorization": f"Bearer {access_token}"}
-    book_data = {"name": "Test Book", "author": "Test Author", "published_year": 2024, "book_summary": "Test Summary"}
+    book_data = {"name": "Shashank Book", "author": "Shashank Rushiya", "published_year": 2024, "book_summary": "Test Summary"}
     response = await client.post("/books/", json=book_data, headers=headers)
     assert response.status_code == 200
     assert response.json()["name"] == "Test Book"
@@ -53,10 +53,10 @@ async def test_create_book(client, test_db):
 @pytest.mark.asyncio
 async def test_get_book(client, test_db):
     await client.post("/signup", json={"email": "test@example.com", "password": "password"})
-    login_response = await client.post("/login", json={"email": "test@example.com", "password": "password"})
+    login_response = await client.post("/login", json={"email": "shashank@example.com", "password": "password"})
     access_token = login_response.json()["access_token"]
     headers = {"Authorization": f"Bearer {access_token}"}
-    book_data = {"name": "Test Book", "author": "Test Author", "published_year": 2024, "book_summary": "Test Summary"}
+    book_data = {"name": "Shashank Book", "author": "Shashank Rushiya", "published_year": 2024, "book_summary": "Test Summary"}
     create_response = await client.post("/books/", json=book_data, headers=headers)
     book_id = create_response.json()["id"]
 
@@ -68,10 +68,10 @@ async def test_get_book(client, test_db):
 @pytest.mark.asyncio
 async def test_update_book(client, test_db):
     await client.post("/signup", json={"email": "test@example.com", "password": "password"})
-    login_response = await client.post("/login", json={"email": "test@example.com", "password": "password"})
+    login_response = await client.post("/login", json={"email": "shashank@example.com", "password": "password"})
     access_token = login_response.json()["access_token"]
     headers = {"Authorization": f"Bearer {access_token}"}
-    book_data = {"name": "Test Book", "author": "Test Author", "published_year": 2024, "book_summary": "Test Summary"}
+    book_data = {"name": "Shashank Book", "author": "Shashank Rushiya", "published_year": 2024, "book_summary": "Test Summary"}
     create_response = await client.post("/books/", json=book_data, headers=headers)
     book_id = create_response.json()["id"]
 
@@ -84,10 +84,10 @@ async def test_update_book(client, test_db):
 @pytest.mark.asyncio
 async def test_delete_book(client, test_db):
     await client.post("/signup", json={"email": "test@example.com", "password": "password"})
-    login_response = await client.post("/login", json={"email": "test@example.com", "password": "password"})
+    login_response = await client.post("/login", json={"email": "shashank@example.com", "password": "password"})
     access_token = login_response.json()["access_token"]
     headers = {"Authorization": f"Bearer {access_token}"}
-    book_data = {"name": "Test Book", "author": "Test Author", "published_year": 2024, "book_summary": "Test Summary"}
+    book_data = {"name": "Shashank Book", "author": "Shashank Rushiya", "published_year": 2024, "book_summary": "Test Summary"}
     create_response = await client.post("/books/", json=book_data, headers=headers)
     book_id = create_response.json()["id"]
 

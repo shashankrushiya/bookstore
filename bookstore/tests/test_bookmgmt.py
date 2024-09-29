@@ -5,7 +5,7 @@ from bookstore.bookmgmt import create_book, update_book, delete_book, get_book_b
 
 @pytest.mark.asyncio
 async def test_create_book(mock_db):
-    mock_book = {"name": "Test Book", "author": "Test Author", "published_year": 2024, "book_summary": "Test Summary"}
+    mock_book = {"name": "Shashank Book", "author": "Shashank Rushiya", "published_year": 2024, "book_summary": "Test Summary"}
     response = await create_book(mock_book, db=mock_db)
     mock_db.add.assert_called_once_with(mock_book)
     mock_db.commit.assert_called_once()

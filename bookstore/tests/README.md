@@ -12,7 +12,7 @@ Unit tests focus on individual components or functions of the application in iso
 
 *   We used the `pytest` framework for writing unit tests.  `pytest` provides a simple and flexible way to write and run tests.
 *   Tests are structured to be small, focused, and independent.  Each test case verifies a specific aspect of a function or class.
-*   We used mocking extensively to isolate units under test from external dependencies (databases, APIs, etc.).  This makes tests faster, more reliable, and less prone to breaking due to changes in external systems.  [Mention specific mocking libraries used, e.g., `unittest.mock`].
+*   We used mocking extensively to isolate units under test from external dependencies (databases, APIs, etc.).  This makes tests faster, more reliable, and less prone to breaking due to changes in external systems. 
 *   Test data is kept concise and self-contained within each test function.
 
 **Reliability and Maintainability:**
@@ -40,10 +40,10 @@ Integration tests verify the interaction between different components of the app
 
 ### Challenges and Solutions
 
-*   **[Challenge 1]:**  [Mocking complex dependencies].
-    *   **Solution:** [Using a combination of mocking and stubbing].
-*   **[Challenge 2]:** [Slow integration tests due to database interactions].
-    *   **Solution:** [Using an in-memory database for integration tests and optimizing database queries].
+*   **Challenge 1:**  Mocking complex dependencies.
+    *   **Solution:** Using a combination of mocking and stubbing.
+*   **Challenge 2:** Slow integration tests due to database interactions.
+    *   **Solution:** Using an in-memory database for integration tests and optimizing database queries.
 
 ### Continuous Integration (CI)
 
@@ -62,7 +62,7 @@ To run the tests locally, follow these steps:
 1. **Clone the repository:** Clone the project repository to your local machine using Git:
 
    ```bash
-   git clone [your_repository_url]
+   git clone https://github.com/shashankrushiya/bookstore.git
 
 2. **Create a virtual environment:**  This isolates your project's dependencies from your system's Python environment. Create a virtual environment using venv (Python 3.3+) or virtualenv:
     
